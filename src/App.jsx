@@ -10,99 +10,64 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState('all')
 
   const stats = [
-    { label: 'Projects Completed', value: 15, suffix: '+' },
-    { label: 'Happy Clients', value: 8, suffix: '+' },
-    { label: 'Years Experience', value: 4, suffix: '' },
-    { label: 'Tech Stack', value: 20, suffix: '+' },
+    { label: 'Projects Completed', value: 3, suffix: '' },
+    { label: 'CGPA', value: 7.5, suffix: '' },
+    { label: 'Skills Mastered', value: 7, suffix: '+' },
+    { label: 'Current Year', value: 3, suffix: 'rd' },
   ]
 
   const skills = [
-    { category: 'Frontend', items: ['React.js', 'Vue.js', 'Three.js', 'WebGL', 'TypeScript', 'Tailwind CSS'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'GraphQL', 'REST APIs'] },
-    { category: 'Tools & DevOps', items: ['Git', 'Docker', 'AWS', 'CI/CD', 'Webpack', 'Vite'] },
-    { category: '3D & Animation', items: ['Babylon.js', 'Canvas API', 'GSAP', 'Framer Motion', 'Blender', 'WebGL Shaders'] },
+    { category: 'Programming Languages', items: ['Java (Basics)', 'Python (Basics)', 'C++ (Basics)'] },
+    { category: 'Web Technologies', items: ['HTML', 'CSS', 'JavaScript'] },
+    { category: 'Other', items: ['Hardware & IoT'] },
   ]
 
   const experience = [
     {
-      role: 'Senior Frontend Developer',
-      company: 'Tech Innovators Inc',
-      period: '2023 - Present',
-      description: 'Led frontend architecture redesign, improved performance by 45%, mentored 3 junior developers.',
-      skills: ['React', 'TypeScript', 'Performance Optimization']
+      role: 'Bachelor of Engineering (B.E) – Artificial Intelligence & Machine Learning',
+      company: 'K.S. Rangasamy College of Technology, Tiruchengode',
+      period: '2023 – 2027 (Currently 3rd Year)',
+      description: 'CGPA: 7.5',
+      skills: ['AI & ML']
     },
     {
-      role: 'Full Stack Developer',
-      company: 'Creative Digital Agency',
-      period: '2021 - 2023',
-      description: 'Built 10+ interactive web applications, implemented real-time features, maintained 99.5% uptime.',
-      skills: ['React', 'Node.js', 'MongoDB']
-    },
-    {
-      role: 'Junior Developer',
-      company: 'StartUp Ventures',
-      period: '2020 - 2021',
-      description: 'Developed responsive UIs, fixed critical bugs, contributed to API design discussions.',
-      skills: ['JavaScript', 'React', 'CSS']
+      role: 'Higher Secondary Education (HSC)',
+      company: 'URC Palaniammal Matric Higher Secondary School, Thindal',
+      period: 'Completed',
+      description: '12TH Percentage: 79.9%',
+      skills: ['Science']
     },
   ]
 
   const projects = [
     {
       id: 1,
-      title: 'AI-Powered Analytics Dashboard',
-      category: 'web',
-      description: 'Real-time data visualization with ML-powered insights and predictive analytics.',
-      image: '📊',
-      tags: ['React', 'D3.js', 'WebGL', 'Node.js'],
+      title: 'Phono Kit – Assistive Learning Device for Speech-Challenged Individuals',
+      category: 'iot',
+      description: 'Designed a toy-shaped interactive assistive device to help physically challenged individuals who face speech and pronunciation difficulties. Developed a word display and reading practice system with points and star-based rewards.',
+      image: '🗣️',
+      tags: ['Python', 'C++', 'Raspberry Pi 5', 'IoT'],
       featured: true,
       link: '#'
     },
     {
       id: 2,
-      title: 'Immersive 3D E-Commerce',
-      category: '3d',
-      description: 'Interactive product showcase with WebGL, real-time 3D model manipulation.',
-      image: '🎮',
-      tags: ['Three.js', 'React', 'Babylon.js'],
+      title: 'River Pollution Monitoring and Alert System',
+      category: 'iot',
+      description: 'Developed an IoT-based system to detect river water pollution caused by illegal industrial discharge. Used sensors to monitor pH level, temperature, turbidity, and water quality parameters.',
+      image: '🌊',
+      tags: ['IoT', 'Sensors', 'Raspberry Pi', 'GSM'],
       featured: true,
       link: '#'
     },
     {
       id: 3,
-      title: 'Meditation App with 3D Environments',
-      category: '3d',
-      description: 'Immersive meditation platform with procedurally generated 3D soundscapes.',
-      image: '🧘',
-      tags: ['React', 'Three.js', 'Web Audio API'],
-      link: '#'
-    },
-    {
-      id: 4,
-      title: 'Microservices Architecture Platform',
-      category: 'backend',
-      description: 'Scalable backend infrastructure with containerized microservices and monitoring.',
-      image: '⚙️',
-      tags: ['Node.js', 'Docker', 'Kubernetes', 'GraphQL'],
+      title: 'AI-Based Fake Certificate Detection Using Image Forensics',
+      category: 'ai',
+      description: 'Designed a machine learning model to detect tampered or forged certificates from uploaded PDF documents. Applied image forensic analysis techniques to identify editing and manipulation.',
+      image: '🔍',
+      tags: ['Python', 'Machine Learning', 'Image Forensics'],
       featured: true,
-      link: '#'
-    },
-    {
-      id: 5,
-      title: 'Real-Time Collaboration Tool',
-      category: 'web',
-      description: 'Live document editing with WebSockets and operational transformation.',
-      image: '👥',
-      tags: ['React', 'Socket.io', 'MongoDB'],
-      link: '#'
-    },
-    {
-      id: 6,
-      title: 'AR-enabled Mobile App',
-      category: 'mobile',
-      description: 'Augmented reality furniture visualization using ARKit and WebAR.',
-      image: '📱',
-      tags: ['React Native', 'ARKit', 'WebAR'],
       link: '#'
     },
   ]
@@ -136,6 +101,14 @@ export default function App() {
     <div className="app-container">
       <Hero3D />
 
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-name">VIJAY E</h1>
+          <p className="hero-title">AI & ML Engineering Student & Web Developer</p>
+          <p className="hero-location">Erode, Tamilnadu</p>
+        </div>
+      </section>
+
       <section className="stats-section">
         <div className="stats-container">
           {stats.map((stat, i) => (
@@ -151,12 +124,10 @@ export default function App() {
             <div className="accent-bar"></div>
           </div>
           <p className="intro-text">
-            Hi! I'm a full-stack developer passionate about building interactive, performance-optimized web experiences. 
-            I specialize in <span className="highlight">React, Three.js, and Cloud Architecture</span>, with a focus on 
-            creating immersive 3D applications and scalable backend systems.
+            A motivated and technically focused Web Developer and AI & ML Engineering student with a strong foundation in programming, web technologies, and emerging AI-based solutions. Passionate about designing innovative, user-centric, and socially impactful systems by leveraging modern technologies.
           </p>
           <p className="intro-text">
-            When I'm not coding, I explore emerging web technologies, contribute to open-source projects, and mentor aspiring developers.
+            Seeking opportunities to apply my technical knowledge, problem-solving skills, and creativity in real world projects while continuously learning and growing in the field of software development and artificial intelligence.
           </p>
         </section>
 
@@ -170,7 +141,7 @@ export default function App() {
 
         <section id="experience" className="panel panel-gradient">
           <div className="section-header">
-            <h2>Experience</h2>
+            <h2>Education</h2>
             <div className="accent-bar"></div>
           </div>
           <ExperienceTimeline experience={experience} />
@@ -183,7 +154,7 @@ export default function App() {
           </div>
           
           <div className="filter-buttons">
-            {['all', 'web', '3d', 'backend', 'mobile'].map(filter => (
+            {['all', 'iot', 'ai'].map(filter => (
               <button
                 key={filter}
                 className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
@@ -197,26 +168,7 @@ export default function App() {
           <ProjectShowcase projects={filteredProjects} />
         </section>
 
-        <section id="testimonials" className="panel panel-gradient">
-          <div className="section-header">
-            <h2>Client Testimonials</h2>
-            <div className="accent-bar"></div>
-          </div>
-          <div className="testimonials-grid">
-            {testimonials.map((testimonial, i) => (
-              <div key={i} className="testimonial-card">
-                <div className="stars">
-                  {'⭐'.repeat(testimonial.rating)}
-                </div>
-                <p className="testimonial-text">"{testimonial.text}"</p>
-                <div className="testimonial-author">
-                  <strong>{testimonial.author}</strong>
-                  <span>{testimonial.role}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+
 
         <section id="contact" className="panel panel-dark">
           <div className="section-header">
@@ -237,10 +189,10 @@ export default function App() {
           </div>
           <p>© {new Date().getFullYear()} Vijay Portfolio • Crafted with React, Three.js & ✨</p>
           <div className="social-links">
-            <a href="#" title="GitHub">💻</a>
+            <a href="https://github.com/Vjjd007" title="GitHub">💻</a>
             <a href="#" title="LinkedIn">🔗</a>
             <a href="#" title="Twitter">𝕏</a>
-            <a href="#" title="Email">✉️</a>
+            <a href="mailto:vjjdvjjd0@gmail.com" title="Email">✉️</a>
           </div>
         </div>
       </footer>

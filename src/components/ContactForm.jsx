@@ -37,12 +37,20 @@ export default function ContactForm() {
               <span className="contact-icon">📧</span>
               <div>
                 <h4>Email</h4>
-                <a href="mailto:vijay@email.com">vijay@email.com</a>
+                <a href="mailto:vjjdvjjd0@gmail.com">vjjdvjjd0@gmail.com</a>
               </div>
             </div>
             
             <div className="contact-method">
-              <span className="contact-icon">💼</span>
+              <span className="contact-icon">�</span>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:7708347705">7708347705</a>
+              </div>
+            </div>
+            
+            <div className="contact-method">
+              <span className="contact-icon">�💼</span>
               <div>
                 <h4>LinkedIn</h4>
                 <a href="#" target="_blank" rel="noopener noreferrer">Connect with me</a>
