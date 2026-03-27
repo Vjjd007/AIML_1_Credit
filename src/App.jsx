@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Hero3D from './components/Hero3D'
 import SkillsVisualization from './components/SkillsVisualization'
 import ExperienceTimeline from './components/ExperienceTimeline'
@@ -9,6 +9,7 @@ import ContactForm from './components/ContactForm'
 export default function App() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [theme, setTheme] = useState('dark')
+  const [activeSection, setActiveSection] = useState('about')
 
   const navLinks = [
     { id: 'about', label: 'About' },
@@ -108,6 +109,23 @@ export default function App() {
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark')
 
+  useEffect(() => {
+    const sections = navLinks.map(link => document.getElementById(link.id)).filter(Boolean)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    sections.forEach(el => observer.observe(el))
+    return () => observer.disconnect()
+  }, [navLinks])
+
   return (
     <div className={`app-container theme-${theme}`}>
       <div className="theme-toggle-wrap">
@@ -120,7 +138,12 @@ export default function App() {
         <ul>
           {navLinks.map(link => (
             <li key={link.id}>
-              <a href={`#${link.id}`}>{link.label}</a>
+              <a
+                href={`#${link.id}`}
+                className={activeSection === link.id ? 'active' : ''}
+              >
+                {link.label}
+              </a>
             </li>
           ))}
         </ul>

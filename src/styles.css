@@ -168,8 +168,16 @@ body, .app-container {
 }
 
 .top-nav a:hover,
-.top-nav a:focus {
+.top-nav a:focus,
+.top-nav a.active {
   color: #76f1ff;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(118, 241, 255, 0.5);
+}
+
+.top-nav a.active { 
+  border-bottom: 2px solid #76f1ff;
+  padding-bottom: 0.1rem;
 }
 
 .hero-section { text-align: center; padding: 2rem; background: rgba(10, 20, 45, 0.5); margin-top: -2rem; position: relative; z-index: 10; }
