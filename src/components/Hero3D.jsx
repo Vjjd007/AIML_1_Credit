@@ -148,10 +148,6 @@ export default function Hero3D() {
         <FloatingText2 />
         <OrbitControls enablePan={false} minDistance={2.2} maxDistance={8} />
       </Canvas>
-      <div className="hero-text">
-        <h1>Hi, I’m Vijay</h1>
-        <p>Full-stack developer building modern interactive experiences with React + 3D Web.</p>
-      </div>
     </div>
   )
 }
