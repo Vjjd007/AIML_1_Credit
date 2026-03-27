@@ -58,6 +58,27 @@ function FloatingParticles() {
   )
 }
 
+function FloatingRing() {
+  const ringRef = useRef()
+
+  useFrame(({ clock }) => {
+    const t = clock.getElapsedTime()
+    if (ringRef.current) {
+      ringRef.current.rotation.x = t * 0.2
+      ringRef.current.rotation.y = t * 0.3
+      ringRef.current.rotation.z = t * 0.15
+      ringRef.current.scale.set(1 + Math.sin(t * 0.8) * 0.07, 1 + Math.cos(t * 0.8) * 0.07, 1 + Math.sin(t * 0.8) * 0.07)
+    }
+  })
+
+  return (
+    <mesh ref={ringRef} position={[0, 0, 0]}>
+      <torusGeometry args={[2.4, 0.07, 24, 100]} />
+      <meshStandardMaterial color="#46d8ff" emissive="#1ac4ff" roughness={0.2} metalness={0.7} transparent opacity={0.76} />
+    </mesh>
+  )
+}
+
 function FloatingText() {
   return (
     <Float speed={0.5} rotationIntensity={0.5} floatIntensity={0.5}>
@@ -142,6 +163,7 @@ export default function Hero3D() {
         <spotLight position={[0, 10, 0]} angle={0.3} penumbra={1} intensity={0.5} color="#ffffff" />
         <Stars radius={70} depth={40} count={1300} factor={4} saturation={0.45} fade />
         <RotatingCrystal />
+        <FloatingRing />
         <FloatingParticles />
         <FloatingCubes />
         <FloatingText />

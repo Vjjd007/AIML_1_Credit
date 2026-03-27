@@ -106,6 +106,12 @@ export default function App() {
           <h1 className="hero-name">VIJAY E</h1>
           <p className="hero-title">AI & ML Engineering Student & Web Developer</p>
           <p className="hero-location">Erode, Tamilnadu</p>
+          <div className="hero-tech-badges">
+            {['AI/ML', 'IoT', 'Image Forensics', 'Python', 'Raspberry Pi', 'Cloud'].map((tech, i) => (
+              <span key={i} className="hero-tech-badge">{tech}</span>
+            ))}
+          </div>
+          <p className="hero-tagline">Building future-ready, interactive high-tech experiences with immersive 3D visuals and smart automation.</p>
         </div>
       </section>
 
