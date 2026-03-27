@@ -8,6 +8,7 @@ import ContactForm from './components/ContactForm'
 
 export default function App() {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [theme, setTheme] = useState('dark')
 
   const stats = [
     { label: 'Projects Completed', value: 3, suffix: '' },
@@ -97,8 +98,15 @@ export default function App() {
     ? projects 
     : projects.filter(p => p.category === activeFilter)
 
+  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+
   return (
-    <div className="app-container">
+    <div className={`app-container theme-${theme}`}>
+      <div className="theme-toggle-wrap">
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
+        </button>
+      </div>
       <Hero3D />
 
       <section className="hero-section">

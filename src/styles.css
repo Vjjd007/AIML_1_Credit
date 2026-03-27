@@ -53,6 +53,82 @@ body {
   line-height: 1.49;
 }
 
+.theme-toggle-wrap {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 120;
+}
+
+.theme-toggle {
+  border: 1px solid rgba(118, 241, 255, 0.4);
+  background: rgba(5, 13, 28, 0.9);
+  color: #d8f2ff;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(46, 188, 255, 0.4);
+}
+
+.theme-light {
+  --bg: #f1f6ff;
+  --panel: rgba(255, 255, 255, 0.75);
+  --text: #1b2a3f;
+  --muted: #576985;
+  --accent: #1b6fdd;
+  --primary: #2d5fb1;
+  --secondary: #f24b8a;
+  background: #edf3ff;
+  color: #1b2a3f;
+}
+
+.theme-light .app-container {
+  background: linear-gradient(135deg, #eef5ff 0%, #e8edfb 100%);
+}
+
+.theme-light .panel {
+  border: 1px solid rgba(65, 106, 155, 0.2);
+  box-shadow: 0 14px 40px rgba(90, 122, 169, 0.15);
+}
+
+.theme-light .hero-section {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.theme-light .stats-card {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.theme-light .hero-tech-badge {
+  background: rgba(76, 114, 196, 0.18);
+  border: 1px solid rgba(34, 94, 185, 0.45);
+  color: #1b3a66;
+}
+
+.theme-light .theme-toggle {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1b2a3f;
+  border: 1px solid rgba(54, 83, 135, 0.4);
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-wrap {
+    display: none;
+  }
+}
+
+body, .app-container {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.49;
+}
+
 .app-container { min-height: 100vh; display: flex; flex-direction: column; }
 
 /* Hero Section */
