@@ -10,6 +10,14 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState('all')
   const [theme, setTheme] = useState('dark')
 
+  const navLinks = [
+    { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Education' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
+  ]
+
   const stats = [
     { label: 'Projects Completed', value: 3, suffix: '' },
     { label: 'CGPA', value: 7.5, suffix: '' },
@@ -107,6 +115,17 @@ export default function App() {
           {theme === 'dark' ? 'Switch to Light' : 'Switch to Dark'}
         </button>
       </div>
+
+      <nav className="top-nav">
+        <ul>
+          {navLinks.map(link => (
+            <li key={link.id}>
+              <a href={`#${link.id}`}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       <Hero3D />
 
       <section className="hero-section">
@@ -114,6 +133,8 @@ export default function App() {
           <h1 className="hero-name">VIJAY E</h1>
           <p className="hero-title">AI & ML Engineering Student & Web Developer</p>
           <p className="hero-location">Erode, Tamilnadu</p>
+          <p className="hero-description">Crafting futuristic applications with interactive 3D visual experiences, intelligent IoT workflows, and AI-driven automation.</p>
+          <p className="hero-subtext">Committed to building useful and elegant solutions that empower users and businesses.</p>
           <div className="hero-tech-badges">
             {['AI/ML', 'IoT', 'Image Forensics', 'Python', 'Raspberry Pi', 'Cloud'].map((tech, i) => (
               <span key={i} className="hero-tech-badge">{tech}</span>
